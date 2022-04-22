@@ -8,17 +8,22 @@ import java.util.Scanner;
 
 class Student_list {
     int Std_id ;
-    String Std_name;
+    String Std_name, Std_lname;
     String Dept_id;
     int Age;
     float Marks;
     String Gender;
-    static String College_name = "jain";
 
-    static void get_static_data(){
-        College_name = "christ";
-    }
+    // static String College_name = "jain";
+
+    // static void get_static_data(){
+    //     College_name = "christ";
+    // }
+
     public String show_std_data(){ 
+        StringBuffer Std_buffer_college_name = new StringBuffer("Christ");
+        Std_buffer_college_name.append(" University");
+        System.out.println("Welcome to "+Std_buffer_college_name);
         System.out.print("Enter Std_id: ");
         Scanner Sip = new Scanner(System.in);
         Std_id = Sip.nextInt();
@@ -27,14 +32,14 @@ class Student_list {
         Std_name = Sip.nextLine();
         System.out.print("Enter Dept: ");
         Dept_id= Sip.nextLine();
-        // System.out.print("Enter age: ");
-        // Age=Sip.nextInt();
+        System.out.print("Enter age: ");
+        Age=Sip.nextInt();
         // System.out.print("Enter marks: ");
         // Marks=Sip.nextFloat();
-        // Sip.nextLine();
-        // System.out.print("Enter Gneder: ");
-        // Gender= Sip.nextLine();
-        return Std_id + Std_name + Dept_id + College_name;
+        Sip.nextLine();
+        System.out.print("Enter Gneder: ");
+        Gender= Sip.nextLine();
+        return Std_id + Std_name + Dept_id + Std_buffer_college_name;
     }
     public String get_std_name(int Std_id) { //  method with one parameters
         return Std_name;
@@ -45,7 +50,7 @@ class Student_list {
     
 }
 
-class Department_list {
+class Department_list { 
     int Dept_id ;
     String Dept_name;
     String Dept_desc;
@@ -160,13 +165,13 @@ class Interview_progress {
 public class class_obj {
 
     // Static var,method, block
-    static String College_name = "Pes Campus interview";
+    // static String College_name = "Pes Campus interview";
     
-    static{
-        System.out.println("college name before " + College_name);
-        System.out.println("there is an error in the college name after change");
-        College_name="Christ university Campus interview";
-    }
+    // static{
+    //     System.out.println("college name before " + College_name);
+    //     System.out.println("there is an error in the college name after change");
+    //     College_name="Christ university Campus interview";
+    // }
     public static void main(String[] args) {
         Student_list Std_list = new Student_list();
         Department_list Dp_list = new Department_list();
@@ -178,7 +183,7 @@ public class class_obj {
         Interview_progress Ip_list = new Interview_progress();
 
   
-        System.out.println(College_name);
+        // System.out.println(College_name);
         
         Std_list.show_std_data();
         Jb_list.eligible_or_not();
@@ -201,9 +206,8 @@ public class class_obj {
                 // Jb_list.Std_id = apj.nextInt();
                  System.out.println("Please chose jobrole, DA or AI");
                  Jb_list.job_role = apj.nextLine();
-                Jb_list.eligible_or_not(Jb_list.job_role,Jb_list.Std_id);
-                Interview_schedule Is_lScheduleFirst = new Interview_schedule();
-                // Interview_schedule Is_lScheduleFirst2 = new Interview_schedule(2);
+                 Is_lSchedulesecond.Interview_schedule();
+                // Jb_list.eligible_or_not(Jb_list.job_role,Jb_list.Std_id);                
         }
     }
 
